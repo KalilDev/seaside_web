@@ -1,0 +1,30 @@
+/*
+    Explore
+*/
+
+.explore .contents-carrousel {
+  margin: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  overflow-x: auto;
+}
+
+.explore .contents-carrousel content-card {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  padding: 8px;
+}
+
+.explore .authors-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.explore author-card {
+    height: 200px;
+    display: block;
+}

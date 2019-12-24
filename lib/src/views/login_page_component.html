@@ -1,0 +1,19 @@
+<div class="login-page">
+    <div class="card">
+            <form (ngSubmit)="login()" class="form">
+            <table class="full-width" cellspacing="0">
+                <tr>
+                <td>
+                    <input type="text" id="email" #email="ngForm" placeholder="Email" [(ngModel)]="info.email" ngControl="email" required>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <input type="password" id="password" #password="ngForm" placeholder="Senha" [(ngModel)]="info.password" ngControl="password" required>
+            </td>
+            </tr></table>
+            <material-button type="submit" class="btn btn-primary">Login</material-button>
+            <material-button (click)="onGoogle()" class="btn btn-primary">Login com Google</material-button>
+            </form>
+        </div>
+</div>

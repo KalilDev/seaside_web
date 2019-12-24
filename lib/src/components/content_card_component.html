@@ -1,0 +1,18 @@
+<div class="content-card" [ngClass]="{
+    'with-image':showImage,
+    'without-image':!showImage,
+    'hidden':isHidden
+}">
+    <div class="card-interior">
+        <div class="content">
+                <h3 *ngIf="showTitle">{{content.title}}</h3>
+                <div *ngIf="showText" class="text-wrapper">
+                    <p>{{content.text}}</p>
+                </div>
+            </div>
+            <div class="img-container">
+                <img crossorigin="anonymous" *ngIf="showImage" [src]="content.backgroundImage">
+            </div>
+    </div>
+    <material-ripple (click)="onClick()"></material-ripple>
+</div>

@@ -1,0 +1,21 @@
+<div class="author-card" [ngClass]="{
+    'with-image':showImage,
+    'without-image':!showImage,
+    'hidden':isHidden
+}">
+    <div class="card-interior">
+        <div class="content">
+                <h3 *ngIf="showName">{{author.name}}</h3>
+                <span *ngIf="showBio">{{bioText}}</span>
+                <div *ngIf="showBio" class="bio-wrapper">
+                    <p>{{author.bio}}</p>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="aspect-ratio">
+                    <img crossorigin="anonymous" *ngIf="showImage" [src]="author.imgUrl">
+                </div>
+            </div>
+    </div>
+    <material-ripple (click)="onClick()"></material-ripple>
+</div>

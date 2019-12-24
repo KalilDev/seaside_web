@@ -1,0 +1,29 @@
+<header>
+    <material-button (click)="pageChange(0)">Explorar</material-button>
+    <material-button (click)="pageChange(1)">Pesquisar</material-button>
+    <material-button (click)="pageChange(2)">Favoritos</material-button>
+    <material-button (click)="pageChange(3)">Você</material-button>
+</header>
+<div class="home-page">
+    <div *ngIf="currentPage == 0" class='explore'>
+        <div class="type" *ngFor="let entry of (streamManager | bloc).typeContentMap.entries">
+            <h1>{{entry.key.toString()}}</h1>
+            <div class="contents-carrousel">
+                <content-card *ngFor="let content of entry.value" [content]="content"></content-card>
+            </div>
+        </div>
+        <h1>Autores</h1>
+        <div class="authors-wrapper">
+            <author-card *ngFor="let author of (streamManager | bloc).authors" [author]="author"></author-card>
+        </div>
+    </div>
+    <div *ngIf="currentPage == 1" class='search'>
+
+    </div>
+    <div *ngIf="currentPage == 2" class='favorites'>
+
+    </div>
+    <div *ngIf="currentPage == 3" class='you'>
+
+    </div>
+</div>
