@@ -1,0 +1,31 @@
+name: seaside_web
+description: A web app that uses AngularDart Components
+# version: 1.0.0
+# homepage: https://www.example.com
+# author: KalilDev <kalildev@users.noreply.github.com>
+
+environment:
+  sdk: '>=2.5.0 <3.0.0'
+
+dependencies:
+  angular: ^5.3.0
+  angular_components: ^0.13.0
+  svg_custom_painter:
+    path: ../svg_custom_painter/
+  seaside_blocs:
+    path: ../seaside_blocs/
+  firebase_web:
+    path: ../firebase_abstraction/firebase_web
+  bloc:
+  angular_bloc:
+  angular_router: ^2.0.0-alpha+22
+  angular_forms: ^2.1.2
+  key_value_store_web:
+
+dev_dependencies:
+  angular_test: ^2.3.0
+  build_runner: ^1.6.0
+  build_test: ^0.10.8
+  build_web_compilers: ^2.3.0
+  pedantic: ^1.8.0
+  test: ^1.6.0
