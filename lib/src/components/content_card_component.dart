@@ -4,6 +4,7 @@ import 'package:seaside_web/src/components.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:seaside_blocs/model.dart';
 import 'package:seaside_web/src/navigation/route_paths.dart';
+import 'dart:html';
 @Component(
   selector: 'content-card',
   styleUrls: ['content_card_component.css'],

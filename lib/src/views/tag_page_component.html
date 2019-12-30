@@ -1,3 +1,9 @@
 <div class="tag-page">
-    
+    <h1>{{tag}}</h1>
+    <div class="type" *ngFor="let entry of typeContentMap.entries">
+        <h1>{{entry.key.toString()}}</h1>
+        <div class="card-grid">
+            <content-card *ngFor="let content of entry.value" [content]="content"></content-card>
+        </div>
+    </div>
 </div>

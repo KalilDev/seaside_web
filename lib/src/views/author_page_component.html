@@ -1,3 +1,13 @@
 <div class="author-page">
-    
+    <h1 *ngIf="showAuthorCard">{{author.name}}</h1>
+    <div *ngIf="showAuthorCard" class="author-card big-component-with-image static-card">
+        <img class="rounded-overflowing-image" *ngIf="author.imgUrl != null" [src]="author.imgUrl">
+        <span>{{author.bio}}</span>
+    </div>
+    <div class="type" *ngFor="let entry of typeContentMap.entries">
+        <h1>{{entry.key.toString()}}</h1>
+        <div class="card-grid">
+            <content-card *ngFor="let content of entry.value" [content]="content"></content-card>
+        </div>
+    </div>
 </div>

@@ -1,3 +1,8 @@
 <div class="content-page">
-    
+    <h1 *ngIf="showTitle">{{content.title}}</h1>
+    <img *ngIf="showImage" [src]="content.backgroundImage">
+    <div *ngIf="showDate" class="date">{{datetime | date}}</div>
+    <div *ngIf="showMusicPlayer" class="music-player"></div>
+    <div *ngIf="showGallery" class="gallery"></div>
+    <div class="formatted-text" [safeInnerHtml]="textHtml" *ngIf="showText"></div>
 </div>

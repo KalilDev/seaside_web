@@ -6,24 +6,42 @@
 </header>
 <div class="home-page">
     <div *ngIf="currentPage == 0" class='explore'>
-        <div class="type" *ngFor="let entry of (streamManager | bloc).typeContentMap.entries">
+        <div class="type" *ngFor="let entry of typeContentMap.entries">
             <h1>{{entry.key.toString()}}</h1>
             <div class="contents-carrousel">
                 <content-card *ngFor="let content of entry.value" [content]="content"></content-card>
             </div>
         </div>
         <h1>Autores</h1>
-        <div class="authors-wrapper">
-            <author-card *ngFor="let author of (streamManager | bloc).authors" [author]="author"></author-card>
+        <div class="card-grid">
+            <author-card *ngFor="let author of authors" [author]="author"></author-card>
         </div>
     </div>
     <div *ngIf="currentPage == 1" class='search'>
-
+        <input #queryInput (keyup)="search(queryInput.value)">
+        <div class="card-grid">
+            <author-card *ngFor="let author of searchedAuthors" [author]="author"></author-card>
+            <content-card *ngFor="let content of searchedContents" [content]="content"></content-card>
+        </div>
     </div>
     <div *ngIf="currentPage == 2" class='favorites'>
 
     </div>
     <div *ngIf="currentPage == 3" class='you'>
+        <h1 *ngIf="currentUserName != null">{{currentUserName}}</h1>
+        <div class="big-component-with-image static-card" *ngIf='currentAuthor != null'>
+            <img class="rounded-overflowing-image" *ngIf="currentAuthor.imgUrl != null" [src]="currentAuthor.imgUrl">
+            <p *ngIf="currentAuthor.bio != null">{{currentAuthor.bio}}</p>
+        </div>
+        <div class="contents" *ngIf="currentUserTypeContentMap != null">
+            <div class="type" *ngFor="let entry of currentUserTypeContentMap.entries">
+                <h1>{{entry.key.toString()}}</h1>
+                <div class="contents-carrousel">
+                    <content-card *ngFor="let content of entry.value" [content]="content"></content-card>
+                </div>
+            </div>
+        </div>
+        <button (click)="logout()">Sair</button>
 
     </div>
 </div>
